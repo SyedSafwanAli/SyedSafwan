@@ -1,0 +1,248 @@
+   .wds-slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 1080px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .wds-slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+      cursor: grab;
+    }
+
+    .wds-slider-wrapper:active {
+      cursor: grabbing;
+    }
+
+    .wds-slider-wrapper.wds-dragging {
+      transition: none;
+      cursor: grabbing;
+    }
+
+    .wds-pricing-card {
+      background-color: #2d2d2d;
+      border: 1px solid #404040;
+      border-radius: 12px;
+      padding: 10px;
+      width: 340px;
+      color: white;
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+
+    /* Desktop - Show 3 slides */
+    @media (min-width: 1024px) {
+      .wds-slider-container {
+        max-width: 1080px;
+      }
+      .wds-pricing-card {
+        width: 340px;
+      }
+    }
+
+    /* Tablet - Show 2 slides */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .wds-slider-container {
+        max-width: 720px;
+      }
+      .wds-pricing-card {
+        width: 340px;
+      }
+    }
+
+    /* Mobile - Show 1 slide */
+    @media (max-width: 767px) {
+      .wds-slider-container {
+        max-width: 340px;
+      }
+      .wds-pricing-card {
+        width: 320px;
+      }
+    }
+
+    .wds-header-box {
+      background: black;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .wds-detail-box {
+      padding: 10px;
+    }
+
+    .wds-plan-header {
+      margin-bottom: 8px;
+    }
+
+    .wds-plan-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .wds-plan-subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 24px;
+    }
+
+    .wds-price {
+      font-size: 48px;
+      font-weight: 700;
+      color: #9acd32;
+      line-height: 1;
+    }
+
+    .wds-price-period {
+      font-size: 16px;
+      color: #888;
+      font-weight: 400;
+    }
+
+    .wds-description {
+      color: #888;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .wds-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .wds-feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .wds-feature.wds-active {
+      color: white;
+    }
+
+    .wds-feature.wds-inactive {
+      color: #555;
+    }
+
+    .wds-checkmark {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wds-checkmark.wds-active::before {
+      content: "✓";
+      color: #9acd32;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .wds-checkmark.wds-inactive::before {
+      content: "✓";
+      color: #555;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .wds-cta-button {
+      width: 100%;
+      background-color: #9acd32;
+      color: #2d2d2d;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .wds-cta-button:hover {
+      background-color: #b8e856;
+      transform: translateY(-1px);
+    }
+
+    .wds-cta-button::after {
+      content: "›";
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .wds-nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #9acd32;
+      color: #2d2d2d;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .wds-nav-button:hover {
+      background-color: #b8e856;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .wds-prev {
+      left: -70px;
+    }
+
+    .wds-next {
+      right: -70px;
+    }
+
+    .wds-dots-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .wds-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #555;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .wds-dot:hover {
+      background-color: #777;
+      transform: scale(1.1);
+    }
+
+    .wds-dot.wds-active {
+      background-color: #9acd32;
+      width: 24px;
+      border-radius: 12px;
+      transform: scale(1);
+    }
+
+    @media (max-width: 768px) {
+      .wds-prev {
+        left: -50px;
+      }
+      .wds-next {
+        right: -50px;
+      }
+    }

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Gallery</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1a1a1a;
+    color: white;
+    line-height: 1.6;
+  }
+
+  /* Container */
+  .pf-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* Filter bar */
+  .pf-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .pf-filter-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1rem;
+    cursor: pointer;
+    padding-bottom: 5px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .pf-filter-btn:hover { color: #C9F31D; }
+  .pf-filter-btn.pf-active { color: #C9F31D; }
+  .pf-filter-btn.pf-active::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 2px;
+    background: #C9F31D;
+  }
+
+  /* Gallery */
+  .pf-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .pf-gallery-item {
+    position: relative;
+    background: #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .pf-gallery-item.pf-show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .pf-gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    -webkit-box-reflect: below 4px
+      linear-gradient(to bottom, rgba(0,0,0,0.15), transparent); /* mirror reflection */
+  }
+
+  /* Overlay hidden by default */
+  .pf-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.75);
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+  }
+  /* Show overlay on hover */
+  .pf-gallery-item:hover .pf-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .pf-overlay h3 { font-size: 1.1rem; margin-bottom: 5px; color: #fff; }
+  .pf-overlay p { font-size: 0.85rem; color: #ccc; }
+
+  /* Pagination */
+  .pf-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .pf-pagination-btn,
+  .pf-pagination-number {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #ccc;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  .pf-pagination-btn:hover:not(:disabled),
+  .pf-pagination-number:hover {
+    background: rgba(255,255,255,0.1);
+    color: #C9F31D;
+  }
+  .pf-pagination-number.pf-active {
+    background: #C9F31D;
+    color: #000;
+  }
+  .pf-pagination-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .pf-pagination-ellipsis { color: #666; padding: 0 5px; }
+
+  #pf-paginationInfo {
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+    font-size: 0.9rem;
+  }
+  </style>
+</head>
+<body>
+  <div class="pf-container">
+    <div class="pf-filter-bar">
+      <button class="pf-filter-btn pf-active" data-filter="all">Show All</button>
+      <button class="pf-filter-btn" data-filter="design">Design</button>
+      <button class="pf-filter-btn" data-filter="branding">Branding</button>
+      <button class="pf-filter-btn" data-filter="marketing">Marketing</button>
+      <button class="pf-filter-btn" data-filter="development">Development</button>
+      <button class="pf-filter-btn" data-filter="mobile">Mobile Apps</button>
+      <button class="pf-filter-btn" data-filter="graphics">Graphics</button>
+    </div>
+
+    <div class="pf-gallery" id="pf-gallery"></div>
+
+    <div class="pf-pagination" id="pf-pagination">
+      <button class="pf-pagination-btn" id="pf-prevBtn"><span>←</span> Previous</button>
+      <div class="pf-pagination-numbers" id="pf-paginationNumbers"></div>
+      <button class="pf-pagination-btn" id="pf-nextBtn">Next <span>→</span></button>
+    </div>
+
+    <div id="pf-paginationInfo"></div>
+  </div>
+
+  <script>
+    const portfolioData = [
+      { category: 'design', title: 'Website UI Design', client: 'Corporate Client', tech: 'Figma, XD', id: 1 },
+      { category: 'branding', title: 'Logo Design', client: 'Startup Brand', tech: 'Illustrator', id: 2 },
+      { category: 'branding', title: 'Business Card & Identity', client: 'Consultancy Firm', tech: 'Photoshop, Illustrator', id: 3 },
+      { category: 'marketing', title: 'Social Media Banner', client: 'Retail Brand', tech: 'Photoshop, Canva', id: 4 },
+      { category: 'marketing', title: 'Instagram Post Design', client: 'Fashion Store', tech: 'Photoshop, Canva', id: 5 },
+      { category: 'design', title: 'Landing Page UI', client: 'Tech Company', tech: 'Figma', id: 6 },
+      { category: 'branding', title: 'Restaurant Logo & Menu Design', client: 'Food Business', tech: 'Illustrator, Photoshop', id: 7 },
+      { category: 'mobile', title: 'Mobile App UI/UX', client: 'Fintech Startup', tech: 'Figma', id: 8 },
+      { category: 'graphics', title: 'Custom Illustration', client: 'Creative Agency', tech: 'Procreate, Illustrator', id: 9 },
+      { category: 'graphics', title: 'Poster & Flyer Design', client: 'Event Management', tech: 'Photoshop', id: 10 },
+      { category: 'development', title: 'Responsive Website', client: 'Portfolio Project', tech: 'HTML, CSS, JS', id: 11 },
+      { category: 'development', title: 'E-Commerce Website', client: 'Online Store', tech: 'React, Node.js', id: 12 },
+      { category: 'development', title: 'Responsive Website', client: 'Portfolio Project', tech: 'HTML, CSS, JS', id: 11 },
+      { category: 'development', title: 'E-Commerce Website', client: 'Online Store', tech: 'React, Node.js', id: 12 },
+    ];
+
+    const gallery = document.getElementById('pf-gallery');
+    const filterBtns = document.querySelectorAll('.pf-filter-btn');
+    const prevBtn = document.getElementById('pf-prevBtn');
+    const nextBtn = document.getElementById('pf-nextBtn');
+    const pagination = document.getElementById('pf-pagination');
+    const paginationNumbers = document.getElementById('pf-paginationNumbers');
+    const paginationInfo = document.getElementById('pf-paginationInfo');
+
+    let currentPage = 1;
+    let itemsPerPage = 6;
+    let currentFilter = 'all';
+    let filteredData = [...portfolioData];
+
+    function getRandomImage(width, height, id) {
+      return `https://picsum.photos/seed/${id}/${width}/${height}`;
+    }
+
+    function filterData(category) {
+      filteredData = category === 'all' ? [...portfolioData] : portfolioData.filter(item => item.category === category);
+      currentPage = 1;
+    }
+
+    function getCurrentPageItems() {
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      return filteredData.slice(startIndex, endIndex);
+    }
+
+    function getTotalPages() {
+      return Math.ceil(filteredData.length / itemsPerPage);
+    }
+
+    function createGalleryItems() {
+      const currentItems = getCurrentPageItems();
+      gallery.innerHTML = '';
+      currentItems.forEach((item, index) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'pf-gallery-item';
+        const imgSrc = getRandomImage(400, 300, item.id);
+        galleryItem.innerHTML = `
+          <img src="${imgSrc}" alt="${item.title}" loading="lazy">
+          <div class="pf-overlay">
+            <h3>${item.title}</h3>
+            <p>${item.client}</p>
+            <p>${item.tech}</p>
+          </div>
+        `;
+        gallery.appendChild(galleryItem);
+
+        // Animate with stagger
+        setTimeout(() => {
+          galleryItem.classList.add('pf-show');
+        }, index * 100);
+      });
+    }
+
+    function createPaginationNumbers() {
+      paginationNumbers.innerHTML = '';
+      const totalPages = getTotalPages();
+      if (totalPages <= 1) {
+        paginationInfo.textContent = '';
+        return;
+      }
+      if (currentPage > 3) {
+        paginationNumbers.appendChild(createPageButton(1));
+        if (currentPage > 4) paginationNumbers.appendChild(createEllipsis());
+      }
+      const startPage = Math.max(1, currentPage - 2);
+      const endPage = Math.min(totalPages, currentPage + 2);
+      for (let i = startPage; i <= endPage; i++) {
+        const pageBtn = createPageButton(i);
+        if (i === currentPage) pageBtn.classList.add('pf-active');
+        paginationNumbers.appendChild(pageBtn);
+      }
+      if (currentPage < totalPages - 2) {
+        if (currentPage < totalPages - 3) paginationNumbers.appendChild(createEllipsis());
+        paginationNumbers.appendChild(createPageButton(totalPages));
+      }
+      updatePaginationInfo();
+    }
+
+    function createPageButton(pageNum) {
+      const pageBtn = document.createElement('button');
+      pageBtn.className = 'pf-pagination-number';
+      pageBtn.textContent = pageNum;
+      pageBtn.addEventListener('click', () => { currentPage = pageNum; updateGallery(); });
+      return pageBtn;
+    }
+
+    function createEllipsis() {
+      const ellipsis = document.createElement('span');
+      ellipsis.className = 'pf-pagination-ellipsis';
+      ellipsis.textContent = '...';
+      return ellipsis;
+    }
+
+    function updatePaginationInfo() {
+      const totalItems = filteredData.length;
+      const startItem = (currentPage - 1) * itemsPerPage + 1;
+      const endItem = Math.min(currentPage * itemsPerPage, totalItems);
+      const totalPages = getTotalPages();
+      paginationInfo.textContent = `Showing ${startItem}-${endItem} of ${totalItems} projects (Page ${currentPage} of ${totalPages})`;
+    }
+
+    function updatePaginationButtons() {
+      const totalPages = getTotalPages();
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    function updateGallery(scroll = true) {
+      createGalleryItems();
+      createPaginationNumbers();
+      updatePaginationButtons();
+      const totalPages = getTotalPages();
+      pagination.style.display = totalPages > 1 ? 'flex' : 'none';
+      if (scroll) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function filterItems(category) {
+      currentFilter = category;
+      filterData(category);
+      updateGallery(false); // no scroll on filter
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('pf-active'));
+        btn.classList.add('pf-active');
+        filterItems(btn.getAttribute('data-filter'));
+      });
+    });
+
+    prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; updateGallery(); } });
+    nextBtn.addEventListener('click', () => { if (currentPage < getTotalPages()) { currentPage++; updateGallery(); } });
+
+    // Init
+    filterData('all');
+    updateGallery();
+  </script>
+</body>
+</html>

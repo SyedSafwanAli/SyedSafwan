@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="header-footer.css">
+</head>
+
+<body>
+  <!-- header -->
+  <header class="ss-header" id="ss-header">
+    <nav class="ss-navbar ss-container">
+      <!-- Brand -->
+      <a href="#" class="ss-brand">Syed Safwan</a>
+
+      <!-- Menu -->
+      <div class="ss-menu" id="ss-menu">
+        <ul class="ss-menu-inner">
+          <li class="ss-menu-item"><a href="#home" class="ss-menu-link active">Home</a></li>
+          <li class="ss-menu-item"><a href="#about" class="ss-menu-link">About</a></li>
+          <li class="ss-menu-item"><a href="#skills" class="ss-menu-link">Skills</a></li>
+          <li class="ss-menu-item"><a href="#projects" class="ss-menu-link">Projects</a></li>
+          <li class="ss-menu-item"><a href="#contact" class="ss-menu-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Buttons -->
+      <div class="ss-menu-block">
+        <button class="ss-btn ss-btn-darken" onclick="openModal('appointmentModal')">
+          <i class="bx bx-phone"></i> Contact
+        </button>
+
+        <button type="button" class="ss-burger" id="ss-burger">
+          <span class="ss-burger-line"></span>
+          <span class="ss-burger-line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- header end -->
+
+
+
+  <div class="hero">
+    <!-- IMAGE AT TOP (Mobile Order 1) -->
+    <div class="img-wrapper">
+      <img src="./assets/image-removebg-preview.webp" alt="me">
+    </div>
+
+    <!-- LEFT CONTENT (Mobile Order 2) -->
+    <div class="hero-left">
+      <div class="intro"><i class="fa-solid fa-code"></i> Web Developer</div>
+      <h1> Hi, I'm <span>Syed Safwan</span><br> A Creative Web Developer </h1>
+      <div class="tagline"> I build modern and responsive websites. </div>
+      <div class="buttons">
+        <button class="btn btn-primary">Hire Me</button>
+        <button class="btn btn-outline">View My Work</button>
+      </div>
+    </div>
+
+    <!-- RIGHT CONTENT (Mobile Order 3) -->
+    <div class="hero-right">
+      <div class="tab">
+        <h3>2+</h3>
+        <p>Years Experience</p>
+      </div>
+      <div class="tab">
+        <h3>30+</h3>
+        <p>Projects Completed</p>
+      </div>
+      <div class="tab">
+        <h3>17+</h3>
+        <p>Happy Clients</p>
+      </div>
+    </div>
+  </div>
+
+  <!------------------------------------------ About secttion  ------------------------------------------>
+
+  <section class="about-section">
+    <!-- Image Section -->
+    <div class="image-section">
+      <div class="main-image">
+        <img src="https://html.webtend.net/noxfolio/assets/images/about/about.jpg" alt="Web Developer">
+      </div>
+
+      <div class="profile-card card1">
+        <div class="profile-avatar"><i class="fas fa-code"></i></div>
+        <div class="profile-info">
+          <div class="profile-name">Frontend Dev</div>
+        </div>
+        <span class="arrow-icon"><i class="fas fa-arrow-up-right"></i></span>
+      </div>
+
+      <div class="profile-card card2">
+        <div class="profile-avatar"><i class="fas fa-laptop-code"></i></div>
+        <div class="profile-info">
+          <div class="profile-name">Web Dev</div>
+        </div>
+        <span class="arrow-icon"><i class="fas fa-arrow-up-right"></i></span>
+      </div>
+
+      <div class="green-dot"></div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-wrapper">
+      <div class="section-label"><i class="fa-solid fa-asterisk"></i> About Me</div>
+
+      <h2 class="main-heading">
+        Web <span class="highlight">Developer</span><br>
+        2+ Years Experience
+      </h2>
+
+      <p class="description">I’m a Frontend Web Developer with 2+ years of experience building responsive and modern
+        websites. I love turning ideas into clean, interactive designs.
+        <br>
+        I work with HTML, CSS, JavaScript, React, and WordPress to create fast, SEO-friendly, and user-focused web
+        solutions.
+      </p>
+      <h3>Core Skills</h3>
+      <ul class="services-grid">
+        <li class="about-service-item">
+          <div class="checkmark"></div><span>Frontend Development</span>
+        </li>
+        <li class="about-service-item">
+          <div class="checkmark"></div><span>React & JavaScript</span>
+        </li>
+        <li class="about-service-item">
+          <div class="checkmark"></div><span>Responsive Design</span>
+        </li>
+        <li class="about-service-item">
+          <div class="checkmark"></div><span>API Integration</span>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!------------------------------------------ Popular Services secttion  ------------------------------------------>
+
+  <section class="services-section">
+    <div class="section-label center"><i class="fa-solid fa-asterisk"></i> MY SERVICES AREA</div>
+    <h2 class="main-heading center">
+      My <span class="highlight">Frontend Services </span>For Your Business Growth
+    </h2>
+
+    <!-- Responsive Web Design -->
+    <div class="service-card">
+      <div class="icon-container">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M2 3h20v18H2z" />
+          <path d="M8 21v-5" />
+          <path d="M16 21v-5" />
+          <circle cx="12" cy="7" r="1" />
+        </svg>
+      </div>
+      <div class="content-area">
+        <div class="text-content">
+          <h2 class="service-title">Responsive<br>Web Design</h2>
+        </div>
+        <div class="description-content">
+          <p class="service-description">Building mobile-first, responsive websites that deliver seamless user
+            experiences across all devices.</p>
+        </div>
+        <div class="services-list">
+          <div class="service-item">Mobile-First Layouts</div>
+          <div class="service-item">Cross-Browser Support</div>
+          <div class="service-item">SEO-Friendly Structure</div>
+        </div>
+        <div class="arrow-container">
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" />
+            <path d="M7 7h10v10" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frontend Development -->
+    <div class="service-card">
+      <div class="icon-container">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+        </svg>
+      </div>
+      <div class="content-area">
+        <div class="text-content">
+          <h2 class="service-title">Frontend<br>Development</h2>
+        </div>
+        <div class="description-content">
+          <p class="service-description">Turning UI designs into fast, clean, and interactive websites using modern
+            frontend technologies.</p>
+        </div>
+        <div class="services-list">
+          <div class="service-item">HTML, CSS & JavaScript</div>
+          <div class="service-item">Reusable Components</div>
+          <div class="service-item">Performance Optimization</div>
+        </div>
+        <div class="arrow-container">
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" />
+            <path d="M7 7h10v10" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- React Development -->
+    <div class="service-card">
+      <div class="icon-container">
+        <svg class="icon" viewBox="0 0 24 24">
+          <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" />
+          <path d="M12 22V12" />
+          <path d="M22 8.5L12 15L2 8.5" />
+        </svg>
+      </div>
+      <div class="content-area">
+        <div class="text-content">
+          <h2 class="service-title">React<br>Development</h2>
+        </div>
+        <div class="description-content">
+          <p class="service-description">Creating dynamic and scalable web applications with React, ensuring smooth
+            performance and reusability.</p>
+        </div>
+        <div class="services-list">
+          <div class="service-item">React Components</div>
+          <div class="service-item">State Management</div>
+          <div class="service-item">Single Page Applications</div>
+        </div>
+        <div class="arrow-container">
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" />
+            <path d="M7 7h10v10" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Integration -->
+    <div class="service-card">
+      <div class="icon-container">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+          <path d="M8 7h8" />
+          <path d="M8 11h8" />
+          <path d="M8 15h5" />
+        </svg>
+      </div>
+      <div class="content-area">
+        <div class="text-content">
+          <h2 class="service-title">API<br>Integration</h2>
+        </div>
+        <div class="description-content">
+          <p class="service-description">Connecting websites with third-party services and APIs to deliver real-time,
+            interactive experiences.</p>
+        </div>
+        <div class="services-list">
+          <div class="service-item">REST APIs</div>
+          <div class="service-item">Third-Party Integration</div>
+          <div class="service-item">Dynamic Data Handling</div>
+        </div>
+        <div class="arrow-container">
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" />
+            <path d="M7 7h10v10" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Optimization -->
+    <div class="service-card">
+      <div class="icon-container">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          <path d="M8 14s1.5-2 4-2 4 2 4 2" />
+          <path d="M9 9h.01M15 9h.01" />
+        </svg>
+      </div>
+      <div class="content-area">
+        <div class="text-content">
+          <h2 class="service-title">SEO<br>Optimization</h2>
+        </div>
+        <div class="description-content">
+          <p class="service-description">Optimizing websites for speed, structure, and accessibility to improve search
+            rankings and user experience.</p>
+        </div>
+        <div class="services-list">
+          <div class="service-item">On-Page SEO</div>
+          <div class="service-item">Core Web Vitals</div>
+          <div class="service-item">Mobile-Friendly SEO</div>
+        </div>
+        <div class="arrow-container">
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" />
+            <path d="M7 7h10v10" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="text-align: center;padding: 30px 0;">
+      <button class="btn-primary">Get More Service</button>
+    </div>
+  </section>
+
+
+  <!-------------------------------------------- Skils Secton ------------------------------------------->
+
+  <section class="skill-section" >
+    <!-- Image Section -->
+    <div class="image-section">
+      <div class="section-label"><i class="fa-solid fa-asterisk"></i> Professional Skill of Me</div>
+      <h2 class="main-heading">
+        Professional <span class="highlight">Skill</span><br>
+      </h2>
+      <img src="assets/skill-man.webp" alt="skill-man" class="skill-image">
+      <img src="assets/icons/skill-arrow.webp" alt="" class="arrow-icon">
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-wrapper">
+
+      <div class="dashboard">
+        <!-- Skill Cards -->
+
+        <div class="skill-card" data-skill="84">
+          <div class="icon"><img src="assets/icons/skill4.webp" alt="WordPress"></div>
+          <div class="skill-name">Wordpress</div>
+          <div class="percentage" data-target="95">0%</div>
+          <div class="progress-bar">
+            <div class="progress-fill wordpress-progress"></div>
+          </div>
+        </div>
+
+
+        <div class="skill-card" data-skill="65">
+          <div class="icon"><img src="assets/icons/skill5.webp" alt="Angular"></div>
+          <div class="skill-name">React</div>
+          <div class="percentage" data-target="80">0%</div>
+          <div class="progress-bar">
+            <div class="progress-fill angular-progress"></div>
+          </div>
+        </div>
+
+
+        <div class="skill-card" data-skill="95">
+          <div class="icon"><img src="assets/icons/skill1.webp" alt="Figma"></div>
+          <div class="skill-name">Figma</div>
+          <div class="percentage" data-target="80">0%</div>
+          <div class="progress-bar">
+            <div class="progress-fill figma-progress"></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="83">
+          <div class="icon"><img src="assets/icons/skill2.webp" alt="Framer"></div>
+          <div class="skill-name">HTML & CSS</div>
+          <div class="percentage" data-target="75">0%</div>
+          <div class="progress-bar">
+            <div class="progress-fill framer-progress"></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="93">
+          <div class="icon"><img src="assets/icons/skill3.webp" alt="Photoshop"></div>
+          <div class="skill-name">Photoshop</div>
+          <div class="percentage" data-target="93">0%</div>
+          <div class="progress-bar">
+            <div class="progress-fill ps-progress"></div>
+          </div>
+        </div>
+
+
+
+        <!-- See More Card -->
+        <div class="skill-card see-more-card">
+          <div class="see-more-content">
+            <span>+</span>
+            <p>See More</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-------------------------------------------- Package Secton ------------------------------------------->
+  <section class="plans-section" style="display: none;">
+    <div class="section-label center">
+      <i class="fa-solid fa-asterisk"></i> WEBSITE PACKAGES
+    </div>
+
+    <h2 class="main-heading center">
+      Choose The <span class="highlight">Right Website Package</span> For Your Business Needs
+    </h2>
+
+    <!-- Swiper Container -->
+    <div class="swiper plans-slider">
+      <div class="swiper-wrapper">
+
+        <!-- Basic Website Package -->
+        <div class="swiper-slide">
+          <div class="plan-card">
+            <div class="plan-header-box">
+              <div class="plan-head">
+                <h2 class="plan-name">Basic Website Package</h2>
+                <p class="plan-tagline">Starter Website Solution</p>
+              </div>
+              <div class="plan-price-box">
+                <span class="plan-price">PKR 12,000</span>
+                <span class="plan-period">/one-time</span>
+              </div>
+            </div>
+
+            <div class="plan-body">
+              <p class="plan-desc">
+                Perfect for personal websites and small startups.
+              </p>
+              <ul class="plan-features">
+                <li class="plan-feature active"><span class="tick active"></span>Up to 3 Pages Website</li>
+                <li class="plan-feature active"><span class="tick active"></span>Contact Form</li>
+                <li class="plan-feature active"><span class="tick active"></span>Book A Call CTA</li>
+                <li class="plan-feature active"><span class="tick active"></span>3 Stock Images</li>
+                <li class="plan-feature inactive"><span class="tick inactive"></span>Admin Panel</li>
+                <li class="plan-feature inactive"><span class="tick inactive"></span>Sliders & Animations</li>
+                <li class="plan-feature active"><span class="tick active"></span>Google Friendly Sitemap</li>
+                <li class="plan-feature active"><span class="tick active"></span>48–72 Hours Delivery</li>
+                <li class="plan-feature active"><span class="tick active"></span>Complete Deployment</li>
+              </ul>
+            </div>
+
+            <button class="plan-btn" onclick="openModal('quoteModal')">Choose Package</button>
+          </div>
+        </div>
+
+        <!-- Standard Website Package -->
+        <div class="swiper-slide">
+          <div class="plan-card featured">
+            <div class="plan-header-box">
+              <div class="plan-head">
+                <h2 class="plan-name">Standard Website Package</h2>
+                <p class="plan-tagline">Growing Business Solution</p>
+              </div>
+              <div class="plan-price-box">
+                <span class="plan-price">PKR 25,000</span>
+                <span class="plan-period">/one-time</span>
+              </div>
+            </div>
+
+            <div class="plan-body">
+              <p class="plan-desc">
+                Ideal for small to medium businesses with advanced needs.
+              </p>
+              <ul class="plan-features">
+                <li class="plan-feature active"><span class="tick active"></span>Up to 6 Pages Website</li>
+                <li class="plan-feature active"><span class="tick active"></span>Admin Panel / CMS</li>
+                <li class="plan-feature active"><span class="tick active"></span>Contact Form</li>
+                <li class="plan-feature active"><span class="tick active"></span>Appointment Scheduling Form</li>
+                <li class="plan-feature active"><span class="tick active"></span>5 Stock Images</li>
+                <li class="plan-feature active"><span class="tick active"></span>3 Banner Designs</li>
+                <li class="plan-feature active"><span class="tick active"></span>Google Friendly Sitemap</li>
+                <li class="plan-feature active"><span class="tick active"></span>W3C Certified HTML</li>
+                <li class="plan-feature active"><span class="tick active"></span>Complete Deployment</li>
+              </ul>
+            </div>
+
+            <button class="plan-btn" onclick="openModal('quoteModal')">Choose Package</button>
+          </div>
+        </div>
+
+        <!-- Premium Website Package -->
+        <div class="swiper-slide">
+          <div class="plan-card">
+            <div class="plan-header-box">
+              <div class="plan-head">
+                <h2 class="plan-name">Premium Website Package</h2>
+                <p class="plan-tagline">Complete Business Solution</p>
+              </div>
+              <div class="plan-price-box">
+                <span class="plan-price">PKR 45,000</span>
+                <span class="plan-period">/one-time</span>
+              </div>
+            </div>
+
+            <div class="plan-body">
+              <p class="plan-desc">
+                A full package for enterprises with premium features.
+              </p>
+              <ul class="plan-features">
+                <li class="plan-feature active"><span class="tick active"></span>Up to 10 Pages Website</li>
+                <li class="plan-feature active"><span class="tick active"></span>Advanced CMS / Admin Panel</li>
+                <li class="plan-feature active"><span class="tick active"></span>Contact Form</li>
+                <li class="plan-feature active"><span class="tick active"></span>Appointment Scheduling</li>
+                <li class="plan-feature active"><span class="tick active"></span>10 Stock Images</li>
+                <li class="plan-feature active"><span class="tick active"></span>5 Banner Designs</li>
+                <li class="plan-feature active"><span class="tick active"></span>Advanced Sliders</li>
+                <li class="plan-feature active"><span class="tick active"></span>Google Friendly Sitemap</li>
+                <li class="plan-feature active"><span class="tick active"></span>Priority Support</li>
+              </ul>
+            </div>
+
+            <button class="plan-btn" onclick="openModal('quoteModal')">Choose Package</button>
+          </div>
+        </div>
+
+        <!-- E-Commerce Website Package -->
+        <div class="swiper-slide">
+          <div class="plan-card">
+            <div class="plan-header-box">
+              <div class="plan-head">
+                <h2 class="plan-name">E-Commerce Website</h2>
+                <p class="plan-tagline">Online Store Solution</p>
+              </div>
+              <div class="plan-price-box">
+                <span class="plan-price">PKR 70,000</span>
+                <span class="plan-period">/one-time</span>
+              </div>
+            </div>
+
+            <div class="plan-body">
+              <p class="plan-desc">
+                Best for businesses looking to sell products online.
+              </p>
+              <ul class="plan-features">
+                <li class="plan-feature active"><span class="tick active"></span>Product Catalog (50 Products)</li>
+                <li class="plan-feature active"><span class="tick active"></span>Shopping Cart & Checkout</li>
+                <li class="plan-feature active"><span class="tick active"></span>Payment Gateway Integration</li>
+                <li class="plan-feature active"><span class="tick active"></span>User Registration & Login</li>
+                <li class="plan-feature active"><span class="tick active"></span>Order Management System</li>
+                <li class="plan-feature active"><span class="tick active"></span>Mobile Friendly Layout</li>
+                <li class="plan-feature active"><span class="tick active"></span>Basic SEO Optimization</li>
+                <li class="plan-feature inactive"><span class="tick inactive"></span>Advanced Marketing Tools</li>
+                <li class="plan-feature inactive"><span class="tick inactive"></span>Custom Plugins</li>
+              </ul>
+            </div>
+
+            <button class="plan-btn" onclick="openModal('quoteModal')">Choose Package</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+
+
+
+  <!-------------------------------------------- Contact Secton ------------------------------------------->
+  <section class="contact-section">
+    <div class="content-wrapper">
+      <div class="section-label"><i class="fa-solid fa-asterisk"></i> Contact Us</div>
+
+      <h2 class="main-heading">
+        let's Work <span class="highlight">Together</span><br>
+      </h2>
+      <p class="description">I’m available for freelance projects, collaborations, and full-time opportunities. Let’s
+        bring your ideas to life with modern, responsive, and interactive websites.</p>
+      <h2>Details:</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:syedsafwanali8802@gmail.com"> syedsafwanali8802@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+92 (317) 0666 406"> +92 (317) 0666 406</a>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-location-dot"></i>
+          <a href="#"> Karachi, Pakistan</a>
+        </div>
+      </div>
+
+
+      <!-- Social Links -->
+      <div class="footer-social">
+        <h3>Follow Us:</h3>
+        <div class="social-links">
+          <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="mailto:syedsafwanali8802@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container" >
+      <form action="https://formspree.io/f/yourFormID" method="POST">
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+          <label for="email">Email Address</label>
+          <span class="form-icon"><i class="far fa-envelope"></i></span>
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <label for="name">Your Name</label>
+          <span class="form-icon"><i class="far fa-user"></i></span>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" id="contact" name="contact" placeholder="Your Contact" required>
+          <label for="contact">Your Contact</label>
+          <span class="form-icon"><i class="fas fa-phone"></i></span>
+        </div>
+
+        <div class="form-group message-group">
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          <label for="message">Your Message</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Send</button>
+      </form>
+
+    </div>
+
+  </section>
+  <!----------------------------------------------- Portfolio Section ------------------------------------------>
+  <div class="pf-container center">
+    <div class="section-label"><i class="fa-solid fa-asterisk"></i> Portfolio</div>
+    <h2 class="main-heading center">
+      Explore My <span class="highlight">Popular Projects</span><br>
+    </h2>
+    <div class="pf-filter-bar">
+      <button class="pf-filter-btn pf-active" data-filter="design">Design</button>
+      <button class="pf-filter-btn" data-filter="branding">Branding</button>
+      <button class="pf-filter-btn" data-filter="marketing">Marketing</button>
+      <button class="pf-filter-btn" data-filter="development">Development</button>
+      <button class="pf-filter-btn" data-filter="mobile">Mobile Apps</button>
+      <button class="pf-filter-btn" data-filter="graphics">Graphics</button>
+    </div>
+
+    <div class="pf-gallery" id="pf-gallery"></div>
+
+    <div class="pf-pagination" id="pf-pagination">
+      <button class="pf-pagination-btn" id="pf-prevBtn"><span>←</span> Previous</button>
+      <div class="pf-pagination-numbers" id="pf-paginationNumbers"></div>
+      <button class="pf-pagination-btn" id="pf-nextBtn">Next <span>→</span></button>
+    </div>
+
+    <div id="pf-paginationInfo" style="text-align:center; margin-top:20px; color:#999; font-size:0.9rem;"></div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!---------------------------------------------------- Footer ------------------------------------------------>
+  <footer>
+    <div class="footer-container">
+
+      <!-- About -->
+      <div class="footer-about">
+        <h2>Syed Safwan Ali</h2>
+        <p>Frontend Developer passionate about building modern, responsive web applications with clean UI and smooth UX.
+          Currently working with <b>TheTechio.com</b> and <b>FreelanceWR in Pakistan</b> as a frontend developer.</p>
+        <a href="#contact" class="hire-btn">Hire Me</a>
+      </div>
+
+      <!-- Education & Work -->
+      <div class="footer-info">
+        <h3>Background</h3>
+        <div class="info-item"><i class="fas fa-graduation-cap"></i> Diploma in Software Engineering — Aptech</div>
+        <div class="info-item"><i class="fas fa-university"></i> BSCS (Continue) — Virtual University</div>
+        <div class="info-item"><i class="fas fa-briefcase"></i> Frontend Developer at
+          <a href="https://thetechio.com" target="_blank" rel="noopener noreferrer">TheTechio</a>
+        </div>
+        <div class="info-item"><i class="fas fa-briefcase"></i> Frontend Developer at
+          <a href="https://freelancerinpakistan.com" target="_blank" rel="noopener noreferrer">Freelancer in
+            Pakistan</a>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i
+              class="fab fa-x-twitter"></i></a>
+          <a href="mailto:youremail@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      ©
+      <script>document.write(new Date().getFullYear());</script> Syed Safwan Ali · All Rights Reserved
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Appointment Modal -->
+  <div class="modal-overlay" id="appointmentModal" onclick="closeModal(event, 'appointmentModal')">
+    <div class="modal-container">
+      <div class="form-container-popup">
+        <button class="close-btn" onclick="closeModal(event, 'appointmentModal')">&times;</button>
+        <div class="form-header">
+          <h2>Get Appointment</h2>
+          <p>Let's connect and discuss your needs</p>
+        </div>
+
+        <div class="success-message" id="appointmentSuccess">
+          <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+        </div>
+
+        <form action="https://formspree.io/f/yourFormID" method="POST" id="appointmentForm">
+          <div class="form-group">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+            <span class="form-icon"><i class="far fa-envelope"></i></span>
+          </div>
+          <div class="form-group">
+            <input type="text" name="name" required>
+            <label>Your Name</label>
+            <span class="form-icon"><i class="far fa-user"></i></span>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="contact" id="appointmentContact" required>
+            <label>Your Contact</label>
+            <span class="form-icon"><i class="fas fa-phone"></i></span>
+          </div>
+          <div class="form-group message-group">
+            <textarea name="message" rows="5" required></textarea>
+            <label>Your Message</label>
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="far fa-paper-plane"></i>
+            <span>Send Message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote Modal -->
+  <div class="modal-overlay" id="quoteModal" onclick="closeModal(event, 'quoteModal')">
+    <div class="modal-container">
+      <div class="form-container-popup">
+        <button class="close-btn" onclick="closeModal(event, 'quoteModal')">&times;</button>
+        <div class="form-header">
+          <h2>Request Quote</h2>
+          <p>Let's connect and discuss your needs</p>
+        </div>
+
+        <div class="success-message" id="quoteSuccess">
+          <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+        </div>
+
+        <form action="https://formspree.io/f/yourFormID" method="POST" id="quoteForm">
+          <!-- Email -->
+          <div class="form-group">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+            <span class="form-icon"><i class="far fa-envelope"></i></span>
+          </div>
+
+          <!-- Name -->
+          <div class="form-group">
+            <input type="text" name="name" required>
+            <label>Your Name</label>
+            <span class="form-icon"><i class="far fa-user"></i></span>
+          </div>
+
+          <!-- Contact -->
+          <div class="form-group">
+            <input type="tel" name="contact" id="quoteContact" required>
+            <label>Your Contact</label>
+            <span class="form-icon"><i class="fas fa-phone"></i></span>
+          </div>
+
+          <!-- Company -->
+          <div class="form-group">
+            <input type="text" name="company" required>
+            <label>Company/Business Name</label>
+            <span class="form-icon"><i class="fas fa-building"></i></span>
+          </div>
+
+          <!-- Package -->
+          <div class="form-group">
+            <label for="quotePackage">Package</label>
+            <select id="quotePackage" name="package" required>
+              <option value="">-- Select Package --</option>
+              <option value="Basic Website Package">Basic Website Package</option>
+              <option value="Standard Website Package">Standard Website Package</option>
+              <option value="Premium Website Package">Premium Website Package</option>
+              <option value="Business Website Package">Business Website Package</option>
+              <option value="E-Commerce Website Package">E-Commerce Website Package</option>
+            </select>
+            <span class="form-icon"><i class="fas fa-box-open"></i></span>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group message-group">
+            <textarea name="message" rows="5" required></textarea>
+            <label>Additional Requirements/Questions</label>
+            <span class="form-icon"><i class="far fa-comment-dots"></i></span>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="submit-btn">
+            <i class="far fa-paper-plane"></i>
+            <span>Send Message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".plans-slider", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        1024: { slidesPerView: 3 },
+        768: { slidesPerView: 2 },
+        100: { slidesPerView: 1 },
+      }
+    });
+  </script>
+
+  <script src="./script.js"></script>
+  <script src="./gallery.js"></script>
+
+</body>
+
+</html>
