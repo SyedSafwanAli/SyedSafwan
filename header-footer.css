@@ -7,7 +7,8 @@
   z-index: 99;
   width: 100%;
   display: flex;
-  justify-content: center; /* ✅ center the navbar */
+  justify-content: center;
+  /* ✅ center the navbar */
   transition: transform 0.35s ease;
 }
 
@@ -23,11 +24,13 @@
   justify-content: space-between;
   column-gap: 2rem;
   width: 80%;
-  max-width: 1240px;     /* ✅ limit width */
-  margin: 0 auto;       /* ✅ center horizontally */
+  max-width: 1240px;
+  /* ✅ limit width */
+  margin: 0 auto;
+  /* ✅ center horizontally */
   height: 4.25rem;
   border-radius: 3rem;
-  padding: 0 20px ;
+  padding: 0 20px;
   /* Glass effect */
   background: rgba(54, 54, 54, 0.6);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -60,9 +63,9 @@
 }
 
 .ss-menu.is-active {
-  top:-20px;
+  top: -20px;
   right: 0;
-    height: 100vh;
+  height: 100vh;
 }
 
 .ss-menu-inner {
@@ -126,9 +129,9 @@
   width: 1.5rem;
   height: 1rem;
   z-index: 99;
-    background-color: transparent;
-    border: none;
-    padding: 5px;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
 }
 
 .ss-burger-line {
@@ -161,6 +164,7 @@
   top: 0.5rem;
   transform: rotate(-135deg);
 }
+
 /* ==== Buttons ==== */
 .ss-btn {
   display: inline-flex;
@@ -181,8 +185,8 @@
   color: #fff;
   background-color: #A6CF18;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-              0 2px 4px -1px rgba(0, 0, 0, 0.06);
-              border: none;
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: none;
 }
 
 .ss-btn-darken:hover {
@@ -205,7 +209,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 4.5rem;   /* ✅ fixed height for tablet */
+    height: 4.5rem;
+    /* ✅ fixed height for tablet */
     padding-inline: 1.5rem;
     border-radius: 100px;
     background: rgba(54, 54, 54, 0.6);
@@ -223,7 +228,8 @@
     text-transform: uppercase;
     color: #fff;
     letter-spacing: -1px;
-    line-height: 1; /* ✅ vertical centering fix */
+    line-height: 1;
+    /* ✅ vertical centering fix */
   }
 
   /* Menu container */
@@ -243,7 +249,8 @@
     flex-direction: row;
     align-items: center;
     column-gap: 1.5rem;
-    height: 100%; /* ✅ align center inside navbar */
+    height: 100%;
+    /* ✅ align center inside navbar */
   }
 
   /* Links */
@@ -254,7 +261,8 @@
     text-transform: capitalize;
     position: relative;
     transition: color 0.3s ease;
-    line-height: 4.5rem; /* ✅ vertically aligned with navbar height */
+    line-height: 4.5rem;
+    /* ✅ vertically aligned with navbar height */
   }
 
   .ss-menu-link::after {
@@ -303,7 +311,7 @@
     background-color: #A6CF18;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
     text-decoration: none;
   }
 
@@ -317,9 +325,10 @@
 
 /* ==== Tablet & Desktop (≥769px) ==== */
 @media only screen and (min-width: 769px) {
-  .ss-brand{
+  .ss-brand {
     font-size: 0.9rem;
   }
+
   .ss-menu {
     position: relative;
     right: initial;
@@ -340,7 +349,8 @@
   .ss-menu-link {
     font-size: 1rem;
     text-transform: capitalize;
-    display: inline-block; /* ✅ visible normally */
+    display: inline-block;
+    /* ✅ visible normally */
   }
 
   /* ✅ Burger hidden */
@@ -348,8 +358,9 @@
     display: none;
   }
 }
+
 @media only screen and (max-width: 769px) {
-  .ss-brand{
+  .ss-brand {
     font-size: 0.9rem;
   }
 
@@ -359,160 +370,283 @@
 
   }
 }
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   footer {
-      background: #111;
-      padding: 60px 20px 30px;
-      position: relative;
-    }
 
-    footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      height: 2px;
-      background: #A6CF18;
-      border-radius: 2px;
-    }
 
-    .footer-container {
-      max-width: 1280px; /* updated */
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      text-align: left;
-    }
 
-    /* About */
-    .footer-about h2 {
-      font-size: 22px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
 
-    .footer-about p {
-      font-size: 14px;
-      color: #aaa;
-      line-height: 1.6;
-    }
 
-    /* Background */
-    .footer-info h3,
-    .footer-social h3 {
-      color: #A6CF18;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
 
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      margin-bottom: 10px;
-      color: #bbb;
-    }
 
-    .info-item i {
-      color: #A6CF18;
-      font-size: 16px;
-      min-width: 18px;
-    }
 
-    .info-item a {
-      color: #A6CF18;
-      text-decoration: none;
-    }
 
-    /* Social */
-    .social-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
 
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      color: #bbb;
-      border-radius: 50%;
-      background: #1a1a1a;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
 
-    .social-links a:hover {
-      background: #A6CF18;
-      color: #111;
-      transform: translateY(-3px);
-    }
 
-    /* Hire button */
-    .hire-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 24px;
-      background: #A6CF18;
-      color: #111;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
 
-    .hire-btn:hover {
-      background: #8db614;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(166, 207, 24, 0.5);
-    }
 
-    /* Bottom bar */
-    .footer-bottom {
-      border-top: 1px solid #222;
-      margin-top: 40px;
-      padding-top: 20px;
-      text-align: center;
-      font-size: 13px;
-      color: #666;
-    }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .footer-container {
-        text-align: center;
-      }
-      .info-item {
-        justify-content: center;
-      }
-      .social-links {
-        justify-content: center;
-      }
-    }
+
+
+
+
+footer {
+  background: #111;
+  padding: 60px 20px 30px;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 2px;
+  background: #A6CF18;
+  border-radius: 2px;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  text-align: left;
+}
+
+/* About */
+.footer-about h2 {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* Background + Social Titles */
+.footer-info h3,
+.footer-social h3 {
+  color: #A6CF18;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Info items (aligned properly with icons) */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #bbb;
+  flex-wrap: wrap;
+}
+
+.info-item i {
+  color: #A6CF18;
+  font-size: 18px;
+  min-width: 20px;
+  margin-top: 2px;
+}
+
+.info-item a {
+  color: #A6CF18;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/* Social */
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  color: #bbb;
+  border-radius: 50%;
+  background: #1a1a1a;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: #A6CF18;
+  color: #111;
+  transform: translateY(-3px);
+}
+
+/* Hire button */
+.hire-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  background: #A6CF18;
+  color: #111;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.hire-btn:hover {
+  background: #8db614;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(166, 207, 24, 0.5);
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 1024px) {
+  footer {
+    padding: 30px 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    padding: 40px 15px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  /* About */
+  .footer-about h2 {
+    font-size: 20px;
+  }
+
+  .footer-about p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Background section */
+  .footer-info {
+    text-align: left;
+    /* keep alignment clean */
+  }
+
+  .footer-info h3 {
+    text-align: center;
+  }
+
+  .info-item {
+    justify-content: flex-start;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+
+  /* Social */
+  .footer-social {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  /* Hire button */
+  .hire-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+    margin-top: 15px;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 25px;
+    padding-top: 15px;
+  }
+}
+
+/* Ultra-small screens (like 325px width) */
+@media (max-width: 360px) {
+  footer {
+    padding: 30px 12px 15px;
+  }
+
+  .footer-about h2 {
+    font-size: 18px;
+  }
+
+  .footer-about p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .hire-btn {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+  /* Background section */
+  .footer-info h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .info-item {
+    font-size: 12px;
+    margin-bottom: 8px;
+    gap: 8px;
+    margin-left: 5px;
+  }
+
+  .info-item i {
+    font-size: 16px;
+    min-width: 18px;
+  }
+
+  .info-item a {
+    font-size: 12px;
+  }
+
+  /* Social icons */
+  .social-links a {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  /* Footer bottom */
+  .footer-bottom {
+    font-size: 11px;
+    margin-top: 20px;
+    padding-top: 12px;
+  }
+}

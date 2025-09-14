@@ -1191,6 +1191,7 @@
     }
 
     @media (max-width: 768px) {
+
         .service-title {
             font-size: 1.8rem;
         }
@@ -1235,6 +1236,13 @@
 
 
     @media (max-width: 425px) {
+        .services-section {
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 0;
+            position: relative;
+        }
+
         .service-card {
             flex-direction: column;
             padding: 30px 15px;
@@ -1780,6 +1788,13 @@
     }
 
     @media (max-width: 425px) {
+        .plans-section {
+            width: 85%;
+            margin: 0 auto;
+            padding: 60px 15px;
+            position: relative;
+        }
+
         .plans-slider {
             padding: 0;
         }
@@ -2232,9 +2247,10 @@
         .contact-section {
             text-align: left;
             overflow: hidden !important;
-            
+
         }
-        .contact-item a{
+
+        .contact-item a {
             font-size: 1rem;
         }
 
